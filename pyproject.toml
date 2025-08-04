@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "md-to-html"
+version = "0.1.0"
+description = "Convert Markdown files in a folder to HTML and generate an index."
+authors = ["Simon Strandman <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "convert_md_to_html.py" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+markdown = "^3.6"
+
+[tool.poetry.scripts]
+md-to-html = "convert_md_to_html:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
