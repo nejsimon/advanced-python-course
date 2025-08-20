@@ -1,18 +1,26 @@
 [tool.poetry]
-name = "md-to-html"
+name = "advanced-python-course"
 version = "0.1.0"
-description = "Convert Markdown files in a folder to HTML and generate an index."
+description = "Advanced Python Course"
 authors = ["Simon Strandman <you@example.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "convert_md_to_html.py" }]
+packages = [{ include = "scripts" }]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.11"
 markdown = "^3.6"
+pytest = "^8.4.1"
+requests = "^2.32.4"
+types-requests = "^2.32.4.20250809"
+mypy = "^1.17.1"
+types-markdown = "^3.9.0.20250906"
+pygments = "^2.19.2"
+pymdown-extensions = "^10.16.1"
 
 [tool.poetry.scripts]
-md-to-html = "convert_md_to_html:main"
+build-html = "scripts.build_html:main"
+build-code-excercises = "scripts.build_code_challenges:main"
 
 [build-system]
 requires = ["poetry-core"]
