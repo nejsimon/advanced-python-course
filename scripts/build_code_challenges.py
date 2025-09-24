@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 import re
 
 INPUT_FOLDER = "./src"
@@ -30,8 +30,8 @@ def extract_challenges_from_markdown(content):
     return header, results
 
 
-def convert_to_python_file(md_path, py_path):
-    with open(md_path, "r", encoding="utf-8") as f:
+def convert_to_python_file(md_file, py_path):
+    with open(md_file, "r", encoding="utf-8") as f:
         content = f.read()
 
     header, challenges = extract_challenges_from_markdown(content)
@@ -57,17 +57,21 @@ def convert_to_python_file(md_path, py_path):
 
 
 def main():
-    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    input_folder = Path(INPUT_FOLDER)
+    output_folder = Path(OUTPUT_FOLDER)
+    output_folder.mkdir(exist_ok=True)
     filename_suffix = " Challenge.md"
 
-    for filename in os.listdir(INPUT_FOLDER):
-        if filename.endswith(filename_suffix):
-            base_name = filename[: -len(filename_suffix)]
-            input_path = os.path.join(INPUT_FOLDER, filename)
-            output_path = os.path.join(OUTPUT_FOLDER, f"{base_name}.py")
+    for md_file in input_folder.glob("**/*.md"):
+        if md_file.name.endswith(filename_suffix):
+            base_name = md_file.name[: -len(filename_suffix)]
+            output_file_path = Path(
+                output_folder, md_file.parent.name, f"{base_name}.py"
+            )
+            output_file_path.parent.mkdir(exist_ok=True)
 
-            convert_to_python_file(input_path, output_path)
-            print(f"Converted: {filename} -> {base_name}.py")
+            convert_to_python_file(md_file, output_file_path)
+            print(f"Converted: {md_file.name} -> {base_name}.py")
 
 
 if __name__ == "__main__":

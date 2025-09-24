@@ -14,34 +14,37 @@ Python searches for modules in the following order:
    - PYTHONPATH environment variable paths
    - Standard library directories
    - Site-packages  
+    ```python
+    import sys
+    print(sys.path)
+    ```
 
-```python
-import sys
-print(sys.path)
-2. importlib — The Runtime Import Library
+## 2. importlib — The Runtime Import Library
 importlib allows programmatic imports and access to the import system internals.
 
 Dynamic Import Example
-python
-Copy code
+```python
 import importlib
 
 math_module = importlib.import_module("math")
 print(math_module.sqrt(16))  # 4.0
+```
+
 Reloading a Module
-python
-Copy code
+
+```python
 import importlib
 import mymodule
 
 importlib.reload(mymodule)
+```
 3. __import__() Function
 The built-in function __import__() is the underlying mechanism for the import statement.
 
-python
-Copy code
+```python
 mod = __import__("math")
 print(mod.factorial(5))  # 120
+```
 Rarely used directly in modern code; importlib.import_module is preferred.
 
 Useful for dynamic or conditional imports.
@@ -49,12 +52,12 @@ Useful for dynamic or conditional imports.
 4. Module Caching (sys.modules)
 Python caches loaded modules in sys.modules to avoid reloading:
 
-python
-Copy code
+```python
 import sys
 import math
 
 print("math" in sys.modules)  # True
+```
 Re-importing the same module fetches it from the cache.
 
 importlib.reload() forces re-execution of a cached module.
@@ -70,8 +73,7 @@ importlib.abc.Loader: defines how to load the module.
 
 Example: log every module import:
 
-python
-Copy code
+```python
 import sys
 import importlib.abc
 import importlib.util
@@ -83,6 +85,7 @@ class LoggingFinder(importlib.abc.MetaPathFinder):
 
 sys.meta_path.insert(0, LoggingFinder())
 import math  # prints "Importing: math"
+```
 6. Bytecode Cache (__pycache__)
 Python stores compiled .pyc files in __pycache__ to speed up subsequent imports.
 

@@ -5,7 +5,7 @@ description = "Advanced Python Course"
 authors = ["Simon Strandman <you@example.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "scripts" }]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -17,10 +17,6 @@ mypy = "^1.17.1"
 types-markdown = "^3.9.0.20250906"
 pygments = "^2.19.2"
 pymdown-extensions = "^10.16.1"
-
-[tool.poetry.scripts]
-build-html = "scripts.build_html:main"
-build-code-excercises = "scripts.build_code_challenges:main"
 
 [build-system]
 requires = ["poetry-core"]
