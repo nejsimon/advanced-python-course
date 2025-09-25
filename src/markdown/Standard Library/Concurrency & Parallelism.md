@@ -18,6 +18,7 @@ Python’s standard library provides multiple tools for handling tasks concurren
   threads = [threading.Thread(target=worker, args=(f"Thread-{i}",)) for i in range(3)]
   for t in threads: t.start()
   for t in threads: t.join()
+  ```
 
 ## multiprocessing — True Parallelism with Processes
 
@@ -35,12 +36,13 @@ Python’s standard library provides multiple tools for handling tasks concurren
       processes = [Process(target=compute, args=(10_000_000,)) for _ in range(cpu_count())]
       for p in processes: p.start()
       for p in processes: p.join()
+  ```
 
 ## concurrent.futures — High-Level Concurrency
 - Unified API for threads and processes.
-- Provides ThreadPoolExecutor and ProcessPoolExecutor.
+- Provides `ThreadPoolExecutor` and `ProcessPoolExecutor`.
 - Easy to submit tasks and collect results. 
-- Example (ThreadPoolExecutor):
+- Example (`ThreadPoolExecutor`):
   ```python
   from concurrent.futures import ThreadPoolExecutor
 
@@ -53,6 +55,7 @@ Python’s standard library provides multiple tools for handling tasks concurren
   with ThreadPoolExecutor(max_workers=5) as executor:
       results = list(executor.map(fetch, urls))
   print(results)
+  ```
 
 ## asyncio — Asynchronous I/O
 - Best for large numbers of concurrent I/O-bound tasks.
@@ -75,6 +78,7 @@ Python’s standard library provides multiple tools for handling tasks concurren
           print([len(r) for r in results])
 
   asyncio.run(main())
+  ```
 
 ## queue — Thread-Safe Queues
 
@@ -99,6 +103,7 @@ Python’s standard library provides multiple tools for handling tasks concurren
 
   threading.Thread(target=producer).start()
   threading.Thread(target=consumer).start()
+  ```
 
 ## Choosing the Right Tool
 - I/O-bound, few tasks: threading

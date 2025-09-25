@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>$title</title>
+      <style>
+        /* Basic normalization & sensible defaults */
+        :root {
+          --bg: #ffffff;
+          --text: #222;
+          --muted: #6b7280;
+          --accent: #0b63ff;
+          --surface: #f8fafc;
+          --code-bg: #0f1720; /* dark code bg for highlighted blocks */
+          --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+          --ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+          --max-width: 80ch;
+        }
+
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+
+        html, body {
+          height: 100%;
+          background: var(--bg);
+          color: var(--text);
+          font-family: var(--ui);
+          -webkit-font-smoothing:antialiased;
+          -moz-osx-font-smoothing:grayscale;
+          line-height: 1.55;
+          margin: 0;
+          padding: 0;
+          font-size: 16px;
+        }
+
+        /* Page container */
+        .container {
+          max-width: var(--max-width);
+          margin: 2.25rem auto;
+          padding: 0 1rem;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+          color: inherit;
+          margin: 1.4rem 0 0.6rem;
+          line-height: 1.15;
+          font-weight: 600;
+          letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: 2.125rem; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.25rem; }
+        h4 { font-size: 1.05rem; }
+        h5 { font-size: 0.95rem; }
+        h6 { font-size: 0.85rem; color: var(--muted); }
+
+        /* Paragraphs */
+        p { margin: 0 0 1rem; color: var(--text); }
+
+        /* Links */
+        a {
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(11,99,255,0.12);
+          transition: color .15s ease, border-color .15s ease;
+        }
+        a:hover, a:focus {
+          color: color-mix(in srgb, var(--accent) 75%, black 25%);
+          border-bottom-color: rgba(11,99,255,0.28);
+          outline: none;
+        }
+
+        /* Lists */
+        ul, ol {
+          margin: 0 0 1rem 1.25rem;
+          padding: 0;
+        }
+        li + li { margin-top: 0.35rem; }
+
+        /* Horizontal rule */
+        hr {
+          border: 0;
+          height: 1px;
+          background: #e6eef8;
+          margin: 1.5rem 0;
+        }
+
+        /* Blockquote */
+        blockquote {
+          margin: 0 0 1rem;
+          padding: 0.6rem 1rem;
+          border-left: 3px solid #e6eef8;
+          background: #fbfdff;
+          color: var(--muted);
+          font-style: italic;
+        }
+
+        /* Images */
+        img { max-width: 100%; height: auto; display: block; margin: 0.75rem 0; }
+
+        /* Tables */
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 0 0 1rem;
+          font-size: 0.95rem;
+          overflow: auto;
+          display: block;
+        }
+        th, td {
+          padding: 0.5rem 0.75rem;
+          border: 1px solid #eef2f7;
+          text-align: left;
+        }
+        th {
+          background: #f7fafb;
+          font-weight: 600;
+        }
+        tr:nth-child(even) td { background: #fbfcfd; }
+
+        /* Preformatted code blocks */
+        pre {
+          padding: 0.9rem;
+          border-radius: 8px;
+          font-family: var(--mono);
+          overflow: auto;
+          margin: 0 0 1rem;
+          font-size: 0.9rem;
+        }
+
+        /* Small print */
+        small, .meta {
+          color: var(--muted);
+          font-size: 0.875rem;
+        }
+
+        /* Accessibility / focus */
+        :focus { outline: 3px solid rgba(11,99,255,0.12); outline-offset: 2px; }
+
+        /* Utility */
+        .kv { display:flex; gap:.5rem; flex-wrap:wrap; }
+        .center { text-align:center; }
+
+        /* Print-friendly tweaks */
+        @media print {
+          body { color: #000; background: #fff; }
+          a { text-decoration: underline; color: #000; }
+          pre { background: #f6f6f6; color: #000; }
+        }
+
+      </style>
+      $head
+  </head>
+  <body>
+    <main class="container">
+      $body
+    </main>
+  </body>
+</html>

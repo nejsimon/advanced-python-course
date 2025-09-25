@@ -18,6 +18,7 @@ Python’s standard library includes a powerful set of modules that provide **ge
 
   cyc = cycle("XY")
   print(list(islice(cyc, 5)))  # ['X','Y','X','Y','X']
+  ```
 
 ## 2. functools – Higher-Order Functions
 - **Purpose:** Tools for functional programming and callable manipulation. 
@@ -39,6 +40,7 @@ Python’s standard library includes a powerful set of modules that provide **ge
   nums = [1, 2, 3, 4]
   product = reduce(lambda x, y: x * y, nums)
   print(product)  # 24
+  ```
 
 ## 3. operator – Functional Access to Operators
 - **Purpose:** Functions corresponding to Python’s built-in operators (e.g., add, getitem, attrgetter).
@@ -57,10 +59,10 @@ Python’s standard library includes a powerful set of modules that provide **ge
       def __init__(self, name, age): self.name, self.age = name, age
   people = [Person("Charlie", 40), Person("Dave", 20)]
   print(sorted(people, key=attrgetter("age")))
+  ```
 
 ## 4. heapq – Heap Queue (Priority Queue)
 - **Purpose:** Implements min-heaps for efficient priority queues.
-
 - Example:
   ```python
   import heapq
@@ -69,6 +71,7 @@ Python’s standard library includes a powerful set of modules that provide **ge
   heapq.heapify(nums)
   heapq.heappush(nums, 2)
   print(heapq.heappop(nums))  # 1
+  ```
 
 ## 5. bisect – Binary Search
 - **Purpose:** Maintain sorted lists efficiently.
@@ -79,8 +82,9 @@ Python’s standard library includes a powerful set of modules that provide **ge
   arr = [1, 3, 4, 7]
   pos = bisect.bisect(arr, 5)  # position to insert
   print(pos)  # 3
+  ```
 
-6. statistics – Statistics Functions
+## 6. statistics – Statistics Functions
 - **Purpose:** Basic statistical calculations.
 - Example:
   ```python
@@ -90,11 +94,10 @@ Python’s standard library includes a powerful set of modules that provide **ge
   print(statistics.mean(data))     # 25
   print(statistics.median(data))   # 25.0
   print(statistics.pstdev(data))   # population std deviation
-
+  ```
 
 7. random – Pseudo-Random Numbers
 - **Purpose:** Generate pseudo-random numbers, shuffle data, and simulate randomness.
-
 - Example:
   ```python
   import random
@@ -102,7 +105,7 @@ Python’s standard library includes a powerful set of modules that provide **ge
   print(random.randint(1, 10))  # random integer
   print(random.choice(["apple", "banana", "cherry"]))
   random.shuffle([1, 2, 3, 4])
-
+  ```
 
 ## Quirks & Notes
 - itertools produces lazy iterators — many results must be materialized with list().

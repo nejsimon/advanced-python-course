@@ -17,6 +17,8 @@ mypy = "^1.17.1"
 types-markdown = "^3.9.0.20250906"
 pygments = "^2.19.2"
 pymdown-extensions = "^10.16.1"
+flask = "^3.1.2"
+pydantic = "^2.11.9"
 
 [build-system]
 requires = ["poetry-core"]

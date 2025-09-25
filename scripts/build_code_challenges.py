@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-INPUT_FOLDER = "./src"
+INPUT_FOLDER = "./src/markdown"
 OUTPUT_FOLDER = "./challenges"
 
 

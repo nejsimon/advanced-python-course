@@ -2,6 +2,7 @@
 * Info on class pattern matching is missing
 * Some initial challenge code is broken / incomplete. Make sure that all python code blocks that get inserted in the generated challenge files are valid and executable even when implementations are missing. Any code that must be incomplete should be commented out or completed with placeholder code.
 * Update build-code-exercises.py script to support multiple code blocks
+* It would be nice if built challenge files didn't make mypy go crazy.
 
 # Strings
 * Doc doesn't say anything about the slicing syntax. This should be added.
@@ -46,7 +47,7 @@
 * Challenge already has the correct solutions, nothing to do really.
 
 # Data Pipelines
-* Should probably mention ProcessPoolExecturo instead of multiprocessing.Pool
+* Should probably mention ProcessPoolExecutor instead of multiprocessing.Pool
 
 # Functools
 * Challenge 3 is about a custom key which doesn't exist in current versions of python

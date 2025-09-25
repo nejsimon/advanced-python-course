@@ -27,7 +27,7 @@ print(json_str)  # {"user": "alice", "active": true}
 ## 2. CSV (csv)
 * Reads and writes comma-separated values and similar tabular formats.
 * Handles quoting, delimiters, dialects.
-* Provides csv.reader, csv.writer, csv.DictReader, csv.DictWriter.
+* Provides `csv.reader`, `csv.writer`, `csv.DictReader`, `csv.DictWriter`.
 
 ```python
 import csv
@@ -46,7 +46,7 @@ with open("data.csv") as f:
 ## 3. Pickle (pickle)
 * Serializes and deserializes arbitrary Python objects.
 * Faster than JSON but not secure (never unpickle untrusted input).
-* Provides dump, dumps, load, loads.
+* Provides `dump`, `dumps`, `load`, `loads`.
 
 ```python
 import pickle
@@ -58,7 +58,7 @@ print(restored)
 ```
 
 ## 4. ConfigParser (configparser)
-* Reads and writes .ini configuration files.
+* Reads and writes `.ini` configuration files.
 * Provides hierarchical sections and key/value pairs.
 * Supports defaults and interpolation.
 
@@ -105,9 +105,9 @@ tree.write("output.xml")
 ```
 
 ## Advanced Notes
-* marshal is a lower-level serializer (used internally for .pyc files) — not recommended for persistence.
-* plistlib supports Apple .plist property lists.
-* tomllib (Python 3.11+) reads TOML configuration files.
+* `marshal` is a lower-level serializer (used internally for .pyc files) — not recommended for persistence.
+* `plistlib` supports Apple .plist property lists.
+* `tomllib` (Python 3.11+) reads TOML configuration files.
 
 ## When to Use What
 * JSON → interoperable, human-readable, widely used in APIs.

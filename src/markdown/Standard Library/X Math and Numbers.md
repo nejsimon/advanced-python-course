@@ -13,28 +13,26 @@ Python’s standard library includes a wide range of modules for mathematical op
   - Constants: `pi`, `e`, `tau`, `inf`, `nan`.
   - Rounding: `ceil`, `floor`, `trunc`, `fmod`.
 
-📌 **Example**
+**Example**
 ```python
 import math
 
 print(math.sqrt(16))        # 4.0
 print(math.pi * (3 ** 2))   # Area of circle
 print(math.log(100, 10))    # 2.0
-2. cmath – Complex Numbers
+```
+
+## 2. cmath – Complex Numbers
 Like math but for complex numbers (complex type).
 
 Supports:
-
 cmath.sqrt(-1) → (0+1j)
-
 Trigonometric and hyperbolic functions.
-
 Polar/cartesian conversions: phase, polar, rect.
 
-📌 Example
+**Example**
 
-python
-Copy code
+```python
 import cmath
 
 z = cmath.sqrt(-1)
@@ -55,8 +53,7 @@ Slower than float, but precise.
 
 📌 Example
 
-python
-Copy code
+```python
 from decimal import Decimal, getcontext
 
 getcontext().prec = 4
@@ -70,8 +67,7 @@ Interoperates with int, float, and Decimal.
 
 📌 Example
 
-python
-Copy code
+```python
 from fractions import Fraction
 
 f = Fraction(3, 4) + Fraction(5, 6)
@@ -94,8 +90,7 @@ For cryptographic randomness → use secrets.
 
 📌 Example
 
-python
-Copy code
+```python
 import random
 
 random.seed(42)
@@ -109,8 +104,7 @@ Works with any iterable of numbers.
 
 📌 Example
 
-python
-Copy code
+```python
 import statistics
 
 data = [2, 4, 4, 4, 5, 5, 7, 9]
@@ -125,8 +119,7 @@ Complex, Real, Rational, Integral
 
 Useful for type checking:
 
-python
-Copy code
+```python
 import numbers
 
 print(isinstance(3.14, numbers.Real))   # True
@@ -144,8 +137,7 @@ secrets.token_bytes(), secrets.token_hex(), secrets.token_urlsafe()
 
 📌 Example
 
-python
-Copy code
+```python
 import secrets
 
 print(secrets.token_hex(16))   # Random 32-char hex string
