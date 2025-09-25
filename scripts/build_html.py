@@ -38,7 +38,7 @@ def generate_codehilite_css():
 
 
 def generate_index_html(files: list[Path], output_dir: Path, style: str):
-    print(f"Generating index file...")
+    print("Generating index file...")
     links = "\n".join(
         f'<li><a href="{file.parent.name}/{file.name}">{file.name}</a></li>'
         for file in files
